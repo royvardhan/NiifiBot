@@ -15,9 +15,3 @@ const routerABI = [
 ];
 
 module.exports = { erc20ABI, factoryABI, pairABI, routerABI };
-
-const wbtcNii = poolArr[10]
-    const niiPrice = poolArr[10].token1.price
-    wbtcPrice = await wbtcPriceInUSD()
-    const niiInUSD = wbtcPrice / niiPrice
-    console.log(`NII Price: ${niiInUSD}`)
