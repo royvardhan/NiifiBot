@@ -32,6 +32,7 @@ const convertEthNii = async () => {
     const ethPrice = await ethPriceInUSD()
     const niiPrice = price * ethPrice
     priceArr.push(niiPrice)
+    console.log("Nii price in ETHNII pool: " + niiPrice)
 }
 
 const convertWbtcNii = async () => {
@@ -41,6 +42,7 @@ const convertWbtcNii = async () => {
     const wbtcPrice = await wbtcPriceInUSD()
     const niiPrice = price * wbtcPrice
     priceArr.push(niiPrice)
+    console.log("Nii price in WBTCNII pool: " + niiPrice)
 }
 
 const convertNiiUsdc = async () => {
@@ -48,6 +50,7 @@ const convertNiiUsdc = async () => {
     const data = await res.json()
     const niiPrice = data.data.token1.price
     priceArr.push(niiPrice)
+    console.log("Nii price in NIIUSDC pool: " + niiPrice)
 }
 
 const convertNiiDai = async () => {
@@ -55,6 +58,7 @@ const convertNiiDai = async () => {
     const data = await res.json()
     const niiPrice = data.data.token1.price
     priceArr.push(niiPrice)
+    console.log("Nii price in NIIDAI pool: " + niiPrice)
 }
 
 function updatePriceArray() {
@@ -64,6 +68,4 @@ function updatePriceArray() {
     convertNiiDai()
 }
 
-for (let i = 0; i < priceArr.length; i++) {
-    console.log(priceArr[i])
-}
+updatePriceArray()
