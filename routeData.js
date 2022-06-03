@@ -84,7 +84,9 @@ async function loopPercentage() {
 async function getDifference() {
     await loopPercentage()
     for (let i = 0; i < percentageArr.length; i++) {
-        console.log(percentageArr[i])
+        if (percentageArr[i] - percentageArr[i - 1] >= 3 || percentageArr[i] - percentageArr[i - 1] > -3) {
+            console.log(percentageArr[i])
+        }
     }
 }
 
