@@ -8,7 +8,6 @@ const niiNiifiPool = "https://api.niifi.com/api/v1/pools/0xd723993d38470f3B21Ae0
 
 let priceArr = []
 let percentageArr = []
-
 let arbOpportunity = []
 
 
