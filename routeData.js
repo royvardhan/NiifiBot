@@ -9,6 +9,8 @@ const niiNiifiPool = "https://api.niifi.com/api/v1/pools/0xd723993d38470f3B21Ae0
 let priceArr = []
 let percentageArr = []
 
+let arbOpportunity = []
+
 
 
 const wbtcPriceInUSD = async () => {
@@ -84,13 +86,32 @@ async function loopPercentage() {
 async function getDifference() {
     await loopPercentage()
     for (let i = 0; i < percentageArr.length; i++) {
-        if (percentageArr[i] - percentageArr[i - 1] >= 3 || percentageArr[i] - percentageArr[i - 1] > -3) {
-            console.log(percentageArr[i])
+        if (percentageArr[i] >= 3 || percentageArr[i] <= -3) {
+           arbOpportunity.push(i)
         }
     }
 }
 
 getDifference()
+
+
+
+
+
+
+
+
+
+// let var1 = -2
+// let var2 = -1
+// let var3 = 0
+// let var4 = -3.76776
+
+// let var5 = var4 - var2
+
+// if (var5 <= -2) {
+//     console.log("true")
+// } else console.log("false")
 
 
 
@@ -107,4 +128,17 @@ getDifference()
 //     percentageArr.push(percentage)
 //     console.log(percentageArr)
 //     }
+// }
+
+// function getIncreaseValByPerc(val, perc){
+//     return (val + ((perc / 100) * val));
+// }
+
+// function isOneElementGreaterByPerc(arr, perc = 3){
+//     // 1. Sort the array
+//     const arrSorted = [...arr].sort();
+
+//     // 2. Check if last element is greater by `perc`% than second last element
+//     const [secondLastEle, lastEle] = arrSorted.slice(arrSorted.length - 2);
+//     return (getIncreaseValByPerc(secondLastEle, perc) < lastEle);
 // }
